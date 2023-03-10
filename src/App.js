@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import ButtonBar from './ButtonBar'
 import Gallery from './Gallery'
 //import logo from './logo.svg';
-//import './App.css';
+import './App.css';
 
 function App() {
   let [artId, setArtId] = useState(12720)
@@ -20,7 +20,8 @@ function App() {
   }
   
   return (
-    <div>
+    <div className = 'App'>
+      <h1>{data.title}</h1>
       <Gallery data={data} />
       <ButtonBar setArtId={handleIterate}/>
     </div>
