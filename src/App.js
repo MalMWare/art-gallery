@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import ButtonBar from './ButtonBar'
 import Gallery from './Gallery'
 //import logo from './logo.svg';
 //import './App.css';
@@ -13,10 +14,15 @@ function App() {
       .then(response => response.json())
       .then(resData => setData(resData))
   }, [artId])
+
+  const handleIterate = (e) => {
+    setArtId(artId + Number(e.target.value))
+  }
   
   return (
     <div>
       <Gallery data={data} />
+      <ButtonBar setArtId={handleIterate}/>
     </div>
   )
 }
